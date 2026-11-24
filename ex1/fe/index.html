@@ -1,0 +1,116 @@
+<!-- index.html - Web UI client -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Product Management - Client Web UI</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 30px;
+            background: #f4f6f9;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: auto;
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        th,
+        td {
+            border: 1px solid #ddd;
+            padding: 10px;
+            text-align: left;
+        }
+
+        th {
+            background: #1F4E79;
+            color: white;
+        }
+
+        .btn-delete {
+            background: #d9534f;
+            color: white;
+            border: none;
+            padding: 5px 10px;
+            cursor: pointer;
+        }
+
+        .btn-edit,
+        .btn-save,
+        .btn-cancel {
+            border: 0;
+            padding: 6px 10px;
+            cursor: pointer;
+            margin-right: 4px;
+        }
+
+        .btn-edit,
+        .btn-save {
+            background: #1F4E79;
+            color: white;
+        }
+
+        .error-message {
+            margin-top: 12px;
+            padding: 10px;
+            color: #842029;
+            background: #f8d7da;
+            border-radius: 4px;
+            display: none;
+        }
+
+        .filters {
+            margin-top: 16px;
+        }
+
+        .filters select {
+            margin-left: 8px;
+            padding: 6px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h2>Product Management (Client Web UI)</h2>
+        <form id="productForm">
+            <input type="text" id="name" placeholder="Product name" required>
+            <input type="number" id="price" placeholder="Price (VND)" min="0.01" step="any" required>
+            <input type="text" id="category" placeholder="Category">
+            <button type="submit">Add product</button>
+        </form>
+        <div class="filters">
+            <label for="categoryFilter">Filter by category</label>
+            <select id="categoryFilter">
+                <option value="">All categories</option>
+            </select>
+        </div>
+        <p id="errorMessage" class="error-message" role="alert"></p>
+        <table id="productTable">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>Price (VND)</th>
+                    <th>Category</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+    </div>
+    <script src="app.js"></script>
+</body>
+
+</html>
